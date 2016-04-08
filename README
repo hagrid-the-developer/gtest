@@ -1,0 +1,21 @@
+build and install:
+------------------
+autoreconf -if
+mkdir build && cd build
+../configure
+make
+sudo make install
+
+
+
+Problem:
+$ pkg-config --libs libgtest_main
+Package libgtest_main was not found in the pkg-config search path.
+Perhaps you should add the directory containing `libgtest_main.pc'
+to the PKG_CONFIG_PATH environment variable
+No package 'libgtest_maind' found
+
+Sollution:
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+
+
