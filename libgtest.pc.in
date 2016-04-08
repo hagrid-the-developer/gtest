@@ -1,0 +1,13 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: libgtest
+Description: google tests library with autotools
+Version: @PACKAGE_VERSION@
+Requires:
+URL: [not yet]
+Libs: -L${libdir} -lgtest @GTEST_CXXFLAGS@
+Libs.private:
+Cflags: -I${includedir} @GTEST_CXXFLAGS@
