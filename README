@@ -1,3 +1,5 @@
+Google test library with autotools build system. (the original has cmake).
+
 build and install:
 ------------------
 autoreconf -if
@@ -6,9 +8,20 @@ mkdir build && cd build
 make
 sudo make install
 
+Update:
+-------
+
+Original sources are at:
+https://github.com/google/googletest
+
+Just replace sources in src/ by sources in googletest/src/. Do the same with
+include directory.  Check, all the headers are noted in the propper
+include/*/Makefile.am and .cc in src/Makefile.am. If there was a new one, just
+add it.
 
 
-Problem:
+Possible problem while using:
+-----------------------------
 $ pkg-config --libs libgtest_main
 Package libgtest_main was not found in the pkg-config search path.
 Perhaps you should add the directory containing `libgtest_main.pc'
@@ -18,4 +31,4 @@ No package 'libgtest_maind' found
 Sollution:
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 
-
+(put it to your .bashrc)
